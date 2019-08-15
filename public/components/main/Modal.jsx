@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Modal from "@material-ui/core/Modal";
 import Register from "./Register.jsx";
 import Fab from "@material-ui/core/Fab";
+// import addButton from "../../assets/images/addButton.png";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -16,7 +17,7 @@ function getModalStyle() {
   return {
     top: `${top}%`,
     left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`
+    transform: `translate(-${top}%, -${left}%)`,
   };
 }
 
@@ -25,15 +26,17 @@ const useStyles = makeStyles(theme => ({
     position: "absolute",
     width: 400,
     backgroundColor: theme.palette.background.paper,
-    border: "2px solid #000",
+    border: "1px solid #eee",
+    boxShadow: "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)",
+    borderRadius: "10px",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 4)
+    padding: theme.spacing(2, 2),
   },
   floating: {
     position: "fixed",
     bottom: "2rem",
-    right: "2rem"
-  }
+    right: "2rem",
+  },
 }));
 
 export default function SimpleModal() {
@@ -54,6 +57,7 @@ export default function SimpleModal() {
     <div>
       <Fab color="primary" aria-label="add" className={classes.floating} onClick={handleOpen}>
         등록!
+        {/* <img src="{addButton}" alt="" /> */}
       </Fab>
       <Modal
         aria-labelledby="simple-modal-title"

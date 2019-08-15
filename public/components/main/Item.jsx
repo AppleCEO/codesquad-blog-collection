@@ -3,8 +3,7 @@ import styled from "styled-components";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import Avatar from "@material-ui/core/Avatar";
+import Image from "../Image.jsx";
 
 const StyledLink = styled.a`
   text-decoration: none;
@@ -22,32 +21,15 @@ const Card = styled.li`
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 `;
 
-const Item = ({ title, desc, url, ...restProps }) => {
+const Item = ({ title, desc, url, metadata = { image: { url: "" } } }) => {
+  console.log(metadata);
   return (
     <Card>
-      <StyledLink href={url}>
-        <ListItemAvatar>
-          <Avatar src={""} />
-        </ListItemAvatar>
+      <StyledLink href={url || ""}>
+        <Image src={metadata.image && metadata.image.url} />
         <ListItemText primary={title} secondary={desc} />
       </StyledLink>
     </Card>
   );
 };
-
-// const Item = ({ title, desc, url, ...restProps }) => {
-//   return (
-//     <Card>
-//       <StyledLink href={url}>
-//         <ListItem>
-//           <ListItemAvatar>
-//             <Avatar src={""} />
-//           </ListItemAvatar>
-//           <ListItemText primary={title} secondary={desc} />
-//         </ListItem>
-//       </StyledLink>
-//     </Card>
-//   );
-// };
-
 export default Item;

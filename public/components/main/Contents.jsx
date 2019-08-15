@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Item from "./Item.jsx";
 
 const Ul = styled.ul`
+  margin: 0;
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
@@ -11,7 +12,6 @@ const Ul = styled.ul`
 const Contents = ({ data }) => {
   return (
     <>
-      <h2>Lists</h2>
       <Ul>
         {data.map(v => (
           <Item

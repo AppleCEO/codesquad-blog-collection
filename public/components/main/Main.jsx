@@ -10,7 +10,7 @@ import SimpleModal from "./Modal.jsx";
 
 const Div = styled.div`
   font-size: 2rem;
-  border: 1px solid palevioletred;
+  border: 1px solid #3f51b5;
 `;
 
 const Main = props => {

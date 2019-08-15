@@ -3,15 +3,17 @@ import styled from "styled-components";
 
 const Div = styled.div`
   font-size: 2rem;
-  border: 1px solid palevioletred;
-  background-color: #f5f5f5;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: #3f51b5;
 `;
 
 const Title = styled.h1`
   font-size: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: #333;
+  color: #fff;
 `;
 
 const Header = ({ title }) => {
@@ -22,7 +24,7 @@ const Header = ({ title }) => {
   );
 };
 Header.defaultProps = {
-  title: "코드스쿼드 해커톤",
+  title: "Blog Collection :D",
 };
 
 export default Header;
