@@ -52,4 +52,3 @@ const Register = () => {
 };
 
 export default Register;
-<button>등록</button>;
