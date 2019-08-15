@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import useInputs from "../useInputs.jsx";
 import CONFIGS from "../../constants/configs.js";
+import styled from "styled-components";
+
+const Input = styled.input`
+  display: block;
+`;
 
 const Register = () => {
   const [state, onChange] = useInputs({
@@ -28,20 +33,21 @@ const Register = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    //TODO: POST 요청 보내기
-    console.log(state);
     requestRegister(state);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input name="author" value={author} onChange={onChange} placeholder="작성자" />
-      <input name="title" value={title} onChange={onChange} placeholder="제목" />
-      <input name="description" value={description} onChange={onChange} placeholder="설명" />
-      <input name="category" value={category} onChange={onChange} placeholder="카테고리" />
-      <input name="url" value={url} onChange={onChange} placeholder="링크주소" />
-      <button>등록</button>
-    </form>
+    <>
+      <h3>링크 등록</h3>
+      <form onSubmit={handleSubmit}>
+        <Input name="author" value={author} onChange={onChange} placeholder="작성자" />
+        <Input name="title" value={title} onChange={onChange} placeholder="제목" />
+        <Input name="description" value={description} onChange={onChange} placeholder="설명" />
+        <Input name="category" value={category} onChange={onChange} placeholder="카테고리" />
+        <Input name="url" value={url} onChange={onChange} placeholder="링크주소" />
+        <button>등록</button>
+      </form>
+    </>
   );
 };
 

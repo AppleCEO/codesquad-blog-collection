@@ -10,14 +10,18 @@ const StyledLink = styled.a`
   text-decoration: none;
 `;
 
-const Item = ({ title, desc, url, ...restProps }) => {
+const StyleImg = styled.img`
+  width: 7.5rem;
+  height: 7.5rem;
+`;
+
+const Item = ({ title, desc, url, metadata = { image: { url: "" } } }) => {
+  console.log(metadata);
   return (
     <List>
-      <StyledLink href={url}>
+      <StyledLink href={url || ""}>
         <ListItem>
-          <ListItemAvatar>
-            <Avatar src={""} />
-          </ListItemAvatar>
+          <StyleImg src={metadata.image && metadata.image.url} />
           <ListItemText primary={title} secondary={desc} />
         </ListItem>
       </StyledLink>
