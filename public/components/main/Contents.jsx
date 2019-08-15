@@ -14,7 +14,14 @@ const Contents = ({ data }) => {
       <h2>Lists</h2>
       <Ul>
         {data.map(v => (
-          <Item key={v._id} data-id={v._id} url={v.url} title={v.title} desc={v.description} />
+          <Item
+            key={v._id}
+            data-id={v._id}
+            url={v.url}
+            title={v.title}
+            desc={v.description}
+            metadata={v.metadata && JSON.parse(v.metadata)}
+          />
         ))}
       </Ul>
     </>

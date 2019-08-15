@@ -6,6 +6,7 @@ import useFetch from "../useFetch.jsx";
 import CONFIGS from "../../constants/configs.js";
 import Pagination from "./Pagination.jsx";
 import Register from "./Register.jsx";
+import SimpleModal from "./Modal.jsx";
 
 const Div = styled.div`
   font-size: 2rem;
@@ -18,12 +19,13 @@ const Main = props => {
 
   const requestCategory = async ({ target }) => {
     const targetCategory = target.closest("button").value;
+    const queryString = targetCategory === "all" ? "" : `?category=${targetCategory}`;
     try {
-      const res = await fetch(`${CONFIGS.url}/?category=${targetCategory}`);
+      const res = await fetch(`${CONFIGS.url}/${queryString}`);
       console.log(res);
       const data = await res.json();
       console.log(data);
-      // setState(data)
+      setState(data);
     } catch (err) {
       console.warn(err);
     }
@@ -44,10 +46,10 @@ const Main = props => {
 
   return (
     <Div>
-      <Register />
       <Category data={state.categories} onClick={requestCategory} />
       <Contents data={state.links.docs} />
       <Pagination onClick={requestPage} />
+      <SimpleModal />
     </Div>
   );
 };
