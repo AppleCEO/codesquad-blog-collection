@@ -1,10 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Modal from "@material-ui/core/Modal";
 import Register from "./Register.jsx";
 import Fab from "@material-ui/core/Fab";
-// import addButton from "../../assets/images/addButton.png";
+import Image from "../Image.jsx";
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -53,11 +53,38 @@ export default function SimpleModal() {
     setOpen(false);
   };
 
+  const plusImgSrc = `https://image.flaticon.com/icons/svg/60/60740.svg`;
+
+  const bounce = keyframes`
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+`;
+
+  const Button = styled.div`
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      animation: ${bounce} 0.5s linear alternate;
+    }
+  `;
+
   return (
     <div>
       <Fab color="primary" aria-label="add" className={classes.floating} onClick={handleOpen}>
-        등록!
-        {/* <img src="{addButton}" alt="" /> */}
+        <Button>
+          <Image src={plusImgSrc} alt="" width="50" height="50" />
+        </Button>
       </Fab>
       <Modal
         aria-labelledby="simple-modal-title"
