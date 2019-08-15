@@ -22,7 +22,6 @@ const Card = styled.li`
 `;
 
 const Item = ({ title, desc, url, metadata = { image: { url: "" } } }) => {
-  console.log(metadata);
   return (
     <Card>
       <StyledLink href={url || ""}>

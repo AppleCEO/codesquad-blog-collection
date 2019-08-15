@@ -1,20 +1,25 @@
-import React from "react";
-import styled from "styled-components";
-import Button from "@material-ui/core/Button";
-import ButtonGroup from "@material-ui/core/ButtonGroup";
+import React, { useState } from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import FlatPagination from "material-ui-flat-pagination";
+
+const theme = createMuiTheme();
 
 const Pagination = props => {
-  //TODO: pages배열 props에서 받아서 만들기
-  const pages = ["<", 1, 2, 3, 4, 5, ">"];
+  const [offset, setOffset] = useState(0);
+
+  const { totalPages } = props.pageData;
+
+  const handleClick = offset => {
+    setOffset(offset);
+    props.onClick(offset / 10 + 1);
+  };
 
   return (
-    <ButtonGroup size="small" aria-label="small outlined button group">
-      {pages.map(v => (
-        <Button onClick={props.onClick} key={v} value={v}>
-          {v}
-        </Button>
-      ))}
-    </ButtonGroup>
+    <MuiThemeProvider theme={theme}>
+      <CssBaseline />
+      <FlatPagination limit={10} offset={offset} total={totalPages * 10} onClick={(e, offset) => handleClick(offset)} />
+    </MuiThemeProvider>
   );
 };
 

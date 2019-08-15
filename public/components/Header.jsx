@@ -14,6 +14,8 @@ const Title = styled.h1`
   margin-top: 10px;
   margin-bottom: 10px;
   color: #fff;
+  padding-left: 2rem;
+  padding-right: 2rem;
 `;
 
 const Header = ({ title }) => {
