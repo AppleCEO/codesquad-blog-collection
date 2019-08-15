@@ -24,7 +24,7 @@ const PostBUtton = styled.button`
   font-weight: 700;
   border-radius: 0.25rem;
   border: 0 solid #dae1e7;
-  background-color: #3fc1c9;
+  background-color: #3f51b5;
   color: #fff;
   min-width: 100px;
 `;
@@ -79,7 +79,7 @@ const Register = () => {
         <Input name="category" value={category} onChange={onChange} placeholder="카테고리" />
         <Input name="url" value={url} onChange={onChange} placeholder="링크주소" />
         <DivR>
-          <PostBUtton>등록</PostBUtton>
+          <PostBUtton>새 링크 등록 하기</PostBUtton>
         </DivR>
       </form>
     </FormContainer>
