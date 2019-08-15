@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.207 16.207">
+    <defs>
+        <style>
+            .cls-1{fill:none;stroke:#d8d8d8;stroke-linecap:round;stroke-linejoin:round}
+        </style>
+    </defs>
+    <g id="search_icon" transform="translate(-2.5 -2.5)">
+        <ellipse id="Ellipse_12" cx="6.667" cy="6.667" class="cls-1" data-name="Ellipse 12" rx="6.667" ry="6.667" transform="translate(3 3)"/>
+        <path id="Line_12" d="M3.625 3.625L0 0" class="cls-1" data-name="Line 12" transform="translate(14.375 14.375)"/>
+    </g>
+</svg>

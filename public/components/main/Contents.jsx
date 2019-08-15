@@ -4,6 +4,8 @@ import Item from "./Item.jsx";
 
 const Ul = styled.ul`
   padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 const Contents = ({ data }) => {

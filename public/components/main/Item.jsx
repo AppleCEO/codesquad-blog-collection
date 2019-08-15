@@ -10,19 +10,44 @@ const StyledLink = styled.a`
   text-decoration: none;
 `;
 
+const Card = styled.li`
+  list-style: none;
+  display: flex;
+  box-sizing: border-box;
+  padding: 10px;
+  width: 300px;
+  margin: 16px;
+  border-radius: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+`;
+
 const Item = ({ title, desc, url, ...restProps }) => {
   return (
-    <List>
+    <Card>
       <StyledLink href={url}>
-        <ListItem>
-          <ListItemAvatar>
-            <Avatar src={""} />
-          </ListItemAvatar>
-          <ListItemText primary={title} secondary={desc} />
-        </ListItem>
+        <ListItemAvatar>
+          <Avatar src={""} />
+        </ListItemAvatar>
+        <ListItemText primary={title} secondary={desc} />
       </StyledLink>
-    </List>
+    </Card>
   );
 };
+
+// const Item = ({ title, desc, url, ...restProps }) => {
+//   return (
+//     <Card>
+//       <StyledLink href={url}>
+//         <ListItem>
+//           <ListItemAvatar>
+//             <Avatar src={""} />
+//           </ListItemAvatar>
+//           <ListItemText primary={title} secondary={desc} />
+//         </ListItem>
+//       </StyledLink>
+//     </Card>
+//   );
+// };
 
 export default Item;
