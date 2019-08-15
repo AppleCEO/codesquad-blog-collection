@@ -84,24 +84,26 @@ const Register = props => {
   };
 
   return (
-    <FormContainer>
+    <>
       {loading && <h4>등록중...</h4>}
       {registerSuccess && <h4>등록되었습니다!</h4>}
       {!loading && !registerSuccess && (
-      <FormTitle>링크 등록</FormTitle>
-      <form onSubmit={handleSubmit}>
-        <Input name="author" value={author} onChange={onChange} placeholder="작성자" />
-        <Input name="title" value={title} onChange={onChange} placeholder="제목" />
-        <Input name="description" value={description} onChange={onChange} placeholder="설명" />
-        <Input name="category" value={category} onChange={onChange} placeholder="카테고리" />
-        <Input name="url" value={url} onChange={onChange} placeholder="링크주소" />
-        <DivR>
-          <PostBUtton>새 링크 등록 하기</PostBUtton>
-        </DivR>
-      </form>
+        <FormContainer>
+          <FormTitle>링크 등록</FormTitle>
+          <form onSubmit={handleSubmit}>
+            <Input name="author" value={author} onChange={onChange} placeholder="작성자" />
+            <Input name="title" value={title} onChange={onChange} placeholder="제목" />
+            <Input name="description" value={description} onChange={onChange} placeholder="설명" />
+            <Input name="category" value={category} onChange={onChange} placeholder="카테고리" />
+            <Input name="url" value={url} onChange={onChange} placeholder="링크주소" />
+            <DivR>
+              <PostBUtton>새 링크 등록 하기</PostBUtton>
+            </DivR>
+          </form>
+        </FormContainer>
       )}
-    </FormContainer>
-    );
+    </>
+  );
 };
 
 export default Register;
