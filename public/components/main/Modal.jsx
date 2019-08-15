@@ -93,7 +93,7 @@ export default function SimpleModal() {
         onClose={handleClose}
       >
         <div style={modalStyle} className={classes.paper}>
-          <Register />
+          <Register onClose={handleClose} />
         </div>
       </Modal>
     </div>
