@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import Item from "./Item.jsx";
 
+const Div = styled.div`
+  min-height: 29rem;
+`;
+
 const Ul = styled.ul`
   margin: 0;
   padding: 2rem;
@@ -11,7 +15,7 @@ const Ul = styled.ul`
 
 const Contents = ({ data }) => {
   return (
-    <>
+    <Div>
       <Ul>
         {data.map(v => (
           <Item
@@ -24,7 +28,7 @@ const Contents = ({ data }) => {
           />
         ))}
       </Ul>
-    </>
+    </Div>
   );
 };
 
