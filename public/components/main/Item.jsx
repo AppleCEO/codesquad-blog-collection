@@ -25,7 +25,7 @@ const Card = styled.li`
 const Item = ({ title, desc, url, metadata = { image: { url: "" } } }) => {
   return (
     <Card>
-      <StyledLink href={url || ""}>
+      <StyledLink href={url || ""} target="_blank">
         <Image src={metadata.image && metadata.image.url} />
         <ListItemText primary={title} secondary={desc} />
       </StyledLink>
