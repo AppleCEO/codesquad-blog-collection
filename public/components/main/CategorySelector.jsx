@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -25,12 +25,11 @@ const CategorySelector = ({ value, onChange }) => {
   return (
     <Wrapper>
       <select name="category" value={value} onChange={onChange}>
-        <optgroup label="카테고리">
-          <option value="backend">Back-End</option>
-          <option value="frontend">Front-End</option>
-          <option value="ios">iOS</option>
-          <option value="swift">Swift</option>
-        </optgroup>
+        <option value="">카테고리</option>
+        <option value="backend">Back-End</option>
+        <option value="frontend">Front-End</option>
+        <option value="ios">iOS</option>
+        <option value="swift">Swift</option>
       </select>
     </Wrapper>
   );

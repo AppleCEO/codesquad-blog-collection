@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import useInputs from "../useInputs.jsx";
-import CONFIGS from "../../constants/configs.js";
+import useInputs from "../useInputs";
+import CONFIGS from "../../constants/configs";
 import styled from "styled-components";
-import CategorySelector from "./CategorySelector.jsx";
+import CategorySelector from "./CategorySelector";
 
 const FormContainer = styled.div`
   display: flex;
@@ -40,6 +40,15 @@ const FormTitle = styled.h3`
   margin-top: 16px;
   margin-bottom: 16px;
 `;
+
+const InvalidInputInfo = styled.h4`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55%;
+  background: #fff;
+`;
 const makeDelay = timeInMs => {
   return new Promise(res => setTimeout(res, timeInMs));
 };
@@ -47,16 +56,16 @@ const makeDelay = timeInMs => {
 const Register = props => {
   const [registerSuccess, setRegisterSuccess] = useState();
   const [loading, setLoading] = useState(false);
+  const [invalidInput, setInvalidInput] = useState(false);
+  const [invalidInfoMessage, setInvalidInfoMessage] = useState("");
 
   const [state, onChange] = useInputs({
     author: "",
     title: "",
     description: "",
-    category: "backend",
+    category: "",
     url: ""
   });
-
-  const { author, title, description, category, url } = state;
 
   const requestRegister = async data => {
     try {
@@ -74,8 +83,45 @@ const Register = props => {
     }
   };
 
+  const { author, title, description, category, url } = state;
+
+  const isInvalidUrl = url => {
+    //TODO: 정규표현식으로 검사하는 방식으로 바꾸기
+    if (url.startsWith("http")) return false;
+    return true;
+  };
+
+  const isInvalid = () => {
+    if (!title) {
+      setInvalidInput(true);
+      setInvalidInfoMessage("제목을 입력해주세요");
+      return true;
+    }
+    if (!category) {
+      setInvalidInput(true);
+      setInvalidInfoMessage("카테고리를 선택해주세요");
+      return true;
+    }
+    if (!url) {
+      setInvalidInput(true);
+      setInvalidInfoMessage("url을 입력해주세요");
+      return true;
+    }
+    if (isInvalidUrl(url)) {
+      setInvalidInput(true);
+      setInvalidInfoMessage("url을 'http://~~~'형식으로 써주세요!");
+      return true;
+    }
+    return false;
+  };
+
   const handleSubmit = async e => {
     e.preventDefault();
+    if (isInvalid()) {
+      await makeDelay(1000);
+      setInvalidInput(false);
+      return;
+    }
     setLoading(true);
     await requestRegister(state);
 
@@ -88,6 +134,7 @@ const Register = props => {
     <>
       {loading && <h4>등록중...</h4>}
       {registerSuccess && <h4>등록되었습니다!</h4>}
+      {invalidInput && <InvalidInputInfo>{invalidInfoMessage}</InvalidInputInfo>}
       {!loading && !registerSuccess && (
         <FormContainer>
           <FormTitle>링크 등록</FormTitle>
@@ -101,7 +148,12 @@ const Register = props => {
             <Input name="title" value={title} onChange={onChange} placeholder="제목" />
             <Input name="description" value={description} onChange={onChange} placeholder="설명" />
             <CategorySelector value={category} onChange={onChange} />
-            <Input name="url" value={url} onChange={onChange} placeholder="링크주소" />
+            <Input
+              name="url"
+              value={url}
+              onChange={onChange}
+              placeholder="링크주소(http://www.~~~와 같은 형식으로 써주세요)"
+            />
             <DivR>
               <PostBUtton>새 링크 등록 하기</PostBUtton>
             </DivR>
