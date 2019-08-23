@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useInputs from "../useInputs.jsx";
 import CONFIGS from "../../constants/configs.js";
 import styled from "styled-components";
+import CategorySelector from "./CategorySelector.jsx";
 
 const FormContainer = styled.div`
   display: flex;
@@ -51,8 +52,8 @@ const Register = props => {
     author: "",
     title: "",
     description: "",
-    category: "",
-    url: "",
+    category: "backend",
+    url: ""
   });
 
   const { author, title, description, category, url } = state;
@@ -63,7 +64,7 @@ const Register = props => {
         method: "POST",
         mode: "cors",
         body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json" }
       });
       console.log("res", res);
       setRegisterSuccess(res.status === 201 ? true : false);
@@ -91,10 +92,15 @@ const Register = props => {
         <FormContainer>
           <FormTitle>링크 등록</FormTitle>
           <form onSubmit={handleSubmit}>
-            <Input name="author" value={author} onChange={onChange} placeholder="작성자" />
+            <Input
+              name="author"
+              value={author}
+              onChange={onChange}
+              placeholder="작성자(직접 작성한 포스트일 경우 써주세요!)"
+            />
             <Input name="title" value={title} onChange={onChange} placeholder="제목" />
             <Input name="description" value={description} onChange={onChange} placeholder="설명" />
-            <Input name="category" value={category} onChange={onChange} placeholder="카테고리" />
+            <CategorySelector value={category} onChange={onChange} />
             <Input name="url" value={url} onChange={onChange} placeholder="링크주소" />
             <DivR>
               <PostBUtton>새 링크 등록 하기</PostBUtton>
