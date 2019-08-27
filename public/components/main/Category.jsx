@@ -1,50 +1,40 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/styles";
 
 const Div = styled.div`
   box-sizg: border-box;
   padding: 2rem;
   font-size: 2rem;
-`;
-const useStyles = makeStyles({
-  root: {
-    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
-    border: 0,
-    borderRadius: 3,
-    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-    color: "white",
-    height: 48,
-    padding: "0 30px",
-  },
-});
 
-const buttonColors = [""];
-
-const CategoryTitle = styled.h2`
-  font-size: 32px;
+  .active {
+    background: #3f51b5;
+    color: white;
+  }
 `;
 
 const Category = ({ data, onClick }) => {
-  const [selected, setSelected] = React.useState(false);
+  const [selected, setSelected] = React.useState({ all: true });
 
-  const classes = useStyles();
+  const handleClick = ({ target }) => {
+    onClick({ target });
+    setSelected({ [target.id]: true });
+  };
 
   return (
     <Div>
-      {/* <CategoryTitle>Categories</CategoryTitle> */}
       {data.map(v => (
         <Button
-          // className={classes.root}
-          onClick={onClick}
+          className={selected[v] ? "active" : ""}
+          onClick={handleClick}
+          id={v}
           value={v}
           key={v}
           variant="outlined"
           color="primary"
           size="large"
         >
-          {v}
+          <span id={v}>{v}</span>
         </Button>
       ))}
     </Div>

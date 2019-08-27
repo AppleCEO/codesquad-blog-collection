@@ -23,9 +23,7 @@ const Main = props => {
     const queryString = targetCategory === "all" ? "" : `?category=${targetCategory}`;
     try {
       const res = await fetch(`${CONFIGS.url}${queryString}`);
-      console.log(res);
       const data = await res.json();
-      console.log(data);
       setState(data);
     } catch (err) {
       console.warn(err);
@@ -36,9 +34,7 @@ const Main = props => {
     const categoryQuery = category === "all" ? "" : `category=${category}&`;
     try {
       const res = await fetch(`${CONFIGS.url}/?${categoryQuery}page=${targetPage}`);
-      console.log(res);
       const data = await res.json();
-      console.log(data);
       setState(data);
     } catch (err) {
       console.warn(err);
