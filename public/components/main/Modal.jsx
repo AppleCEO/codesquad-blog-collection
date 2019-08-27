@@ -11,13 +11,10 @@ function rand() {
 }
 
 function getModalStyle() {
-  const top = 50 + rand();
-  const left = 50 + rand();
-
   return {
-    top: `${top}%`,
-    left: `${left}%`,
-    transform: `translate(-${top}%, -${left}%)`,
+    top: `50%`,
+    left: `50%`,
+    transform: `translate(-50%, -50%)`
   };
 }
 
@@ -30,13 +27,13 @@ const useStyles = makeStyles(theme => ({
     boxShadow: "0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24)",
     borderRadius: "10px",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 2),
+    padding: theme.spacing(2, 2)
   },
   floating: {
     position: "fixed",
     bottom: "2rem",
-    right: "2rem",
-  },
+    right: "2rem"
+  }
 }));
 
 export default function SimpleModal() {
