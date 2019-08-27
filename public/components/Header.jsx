@@ -1,32 +1,30 @@
 import React from "react";
 import styled from "styled-components";
 
-const Div = styled.div`
+const Wrapper = styled.h1`
   font-size: 2rem;
   height: 60px;
   display: flex;
   align-items: center;
   background-color: #3f51b5;
+
+  a {
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    text-decoration: none;
+  }
 `;
 
-const Title = styled.h1`
-  font-size: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #fff;
-  padding-left: 2rem;
-  padding-right: 2rem;
-`;
-
-const Header = ({ title }) => {
+const Header = () => {
   return (
-    <Div>
-      <Title>{title}</Title>
-    </Div>
+    <Wrapper>
+      <a href="/">LINKSQUAD</a>
+    </Wrapper>
   );
-};
-Header.defaultProps = {
-  title: "Blog Collection :D",
 };
 
 export default Header;
