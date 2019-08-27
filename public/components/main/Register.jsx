@@ -67,15 +67,19 @@ const Register = props => {
     url: ""
   });
 
+  const myHeader = new Headers({
+    "x-access-token": "dauqsedoc",
+    "Content-Type": "application/json"
+  });
+
   const requestRegister = async data => {
     try {
       const res = await fetch(`${CONFIGS.url}/link`, {
         method: "POST",
         mode: "cors",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" }
+        headers: myHeader,
+        body: JSON.stringify(data)
       });
-      console.log("res", res);
       setRegisterSuccess(res.status === 201 ? true : false);
     } catch (err) {
       console.warn(err);

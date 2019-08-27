@@ -12,17 +12,27 @@ const Div = styled.div`
   border: 1px solid #3f51b5;
 `;
 
-const Main = props => {
+const Main = () => {
   const [state, setState] = useState({ categories: [], links: { docs: [] } });
   const [category, setCategory] = useState("all");
-  let loading = useFetch(CONFIGS.url, setState);
+  const loading = useFetch(CONFIGS.url, setState);
+
+  const myHeader = new Headers({
+    "x-access-token": "dauqsedoc"
+  });
+  const options = {
+    method: "GET",
+    headers: myHeader,
+    mode: "cors"
+  };
 
   const requestCategory = async ({ target }) => {
     const targetCategory = target.closest("button").value;
     setCategory(targetCategory);
     const queryString = targetCategory === "all" ? "" : `?category=${targetCategory}`;
     try {
-      const res = await fetch(`${CONFIGS.url}${queryString}`);
+      console.log(options);
+      const res = await fetch(`${CONFIGS.url}${queryString}`, options);
       const data = await res.json();
       setState(data);
     } catch (err) {
@@ -33,7 +43,8 @@ const Main = props => {
   const requestPage = async targetPage => {
     const categoryQuery = category === "all" ? "" : `category=${category}&`;
     try {
-      const res = await fetch(`${CONFIGS.url}/?${categoryQuery}page=${targetPage}`);
+      console.log(options);
+      const res = await fetch(`${CONFIGS.url}/?${categoryQuery}page=${targetPage}`, options);
       const data = await res.json();
       setState(data);
     } catch (err) {
