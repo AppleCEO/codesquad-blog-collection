@@ -28,7 +28,7 @@ const CategorySelector = ({ value, onChange }) => {
         <option value="">카테고리</option>
         <option value="backend">Back-End</option>
         <option value="frontend">Front-End</option>
-        <option value="ios">iOS</option>
+        <option value="iOS">iOS</option>
         <option value="swift">Swift</option>
       </select>
     </Wrapper>
