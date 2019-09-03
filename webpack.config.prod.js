@@ -6,10 +6,13 @@ module.exports = {
   mode: 'production',
   devtool: 'cheap-module-source-map',
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx']
   },
 
-  entry: './public/entry/index.js',
+  entry: {
+    app: './public/entry/index.js',
+    admin: './public/admin/index.js'
+  },
 
   module: {
     rules: [
@@ -23,7 +26,7 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: '[name].[chunkhash].js'
   },
 
   optimization: {
@@ -40,9 +43,15 @@ module.exports = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'public/entry/index.html'
+      filename: 'index.html',
+      template: 'public/entry/index.html',
+      chunks: ['app', 'vendors']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'admin-index.html',
+      template: 'public/admin/admin-index.html',
+      chunks: ['admin', 'vendors']
     }),
     new CleanWebpackPlugin()
   ]
-
-}
+};
