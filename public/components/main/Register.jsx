@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import useInputs from "../useInputs";
-import CONFIGS from "../../constants/configs";
-import styled from "styled-components";
-import CategorySelector from "./CategorySelector";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import useInputs from '../../hooks/useInputs';
+import CONFIGS from '../../constants/configs';
+import CategorySelector from './CategorySelector';
 
 const FormContainer = styled.div`
   display: flex;
@@ -57,27 +57,22 @@ const Register = props => {
   const [registerSuccess, setRegisterSuccess] = useState();
   const [loading, setLoading] = useState(false);
   const [invalidInput, setInvalidInput] = useState(false);
-  const [invalidInfoMessage, setInvalidInfoMessage] = useState("");
+  const [invalidInfoMessage, setInvalidInfoMessage] = useState('');
 
   const [state, onChange] = useInputs({
-    author: "",
-    title: "",
-    description: "",
-    category: "",
-    url: ""
-  });
-
-  const myHeader = new Headers({
-    "x-access-token": "dauqsedoc",
-    "Content-Type": "application/json"
+    author: '',
+    title: '',
+    description: '',
+    category: '',
+    url: ''
   });
 
   const requestRegister = async data => {
     try {
       const res = await fetch(`${CONFIGS.url}/link`, {
-        method: "POST",
-        mode: "cors",
-        headers: myHeader,
+        method: 'POST',
+        mode: 'cors',
+        headers: CONFIGS.HEADER,
         body: JSON.stringify(data)
       });
       setRegisterSuccess(res.status === 201 ? true : false);
@@ -91,24 +86,24 @@ const Register = props => {
 
   const isInvalidUrl = url => {
     //TODO: 정규표현식으로 검사하는 방식으로 바꾸기
-    if (url.startsWith("http")) return false;
+    if (url.startsWith('http')) return false;
     return true;
   };
 
   const isInvalid = () => {
     if (!title) {
       setInvalidInput(true);
-      setInvalidInfoMessage("제목을 입력해주세요");
+      setInvalidInfoMessage('제목을 입력해주세요');
       return true;
     }
     if (!category) {
       setInvalidInput(true);
-      setInvalidInfoMessage("카테고리를 선택해주세요");
+      setInvalidInfoMessage('카테고리를 선택해주세요');
       return true;
     }
     if (!url) {
       setInvalidInput(true);
-      setInvalidInfoMessage("url을 입력해주세요");
+      setInvalidInfoMessage('url을 입력해주세요');
       return true;
     }
     if (isInvalidUrl(url)) {
@@ -138,7 +133,9 @@ const Register = props => {
     <>
       {loading && <h4>등록중...</h4>}
       {registerSuccess && <h4>등록되었습니다!</h4>}
-      {invalidInput && <InvalidInputInfo>{invalidInfoMessage}</InvalidInputInfo>}
+      {invalidInput && (
+        <InvalidInputInfo>{invalidInfoMessage}</InvalidInputInfo>
+      )}
       {!loading && !registerSuccess && (
         <FormContainer>
           <FormTitle>링크 등록</FormTitle>
@@ -149,8 +146,18 @@ const Register = props => {
               onChange={onChange}
               placeholder="작성자(직접 작성한 포스트일 경우 써주세요!)"
             />
-            <Input name="title" value={title} onChange={onChange} placeholder="제목" />
-            <Input name="description" value={description} onChange={onChange} placeholder="설명" />
+            <Input
+              name="title"
+              value={title}
+              onChange={onChange}
+              placeholder="제목"
+            />
+            <Input
+              name="description"
+              value={description}
+              onChange={onChange}
+              placeholder="설명"
+            />
             <CategorySelector value={category} onChange={onChange} />
             <Input
               name="url"

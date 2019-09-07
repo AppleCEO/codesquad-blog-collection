@@ -3,3 +3,4 @@ docs
 resource
 .DS_Store
 .vscode
+access-token.js

@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import Category from "./Category.jsx";
-import Contents from "./Contents.jsx";
-import useFetch from "../useFetch.jsx";
-import CONFIGS from "../../constants/configs.js";
-import Pagination from "./Pagination.jsx";
-import SimpleModal from "./Modal.jsx";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Category from './Category';
+import Contents from './Contents';
+import useFetch from '../../hooks/useFetch';
+import CONFIGS from '../../constants/configs';
+import Pagination from './Pagination';
+import SimpleModal from './Modal';
+const { URL, HEADER } = CONFIGS;
 
 const Div = styled.div`
   font-size: 2rem;
@@ -14,25 +15,22 @@ const Div = styled.div`
 
 const Main = () => {
   const [state, setState] = useState({ categories: [], links: { docs: [] } });
-  const [category, setCategory] = useState("all");
-  const loading = useFetch(CONFIGS.url, setState);
+  const [category, setCategory] = useState('all');
+  const loading = useFetch(URL, setState);
 
-  const myHeader = new Headers({
-    "x-access-token": "dauqsedoc"
-  });
   const options = {
-    method: "GET",
-    headers: myHeader,
-    mode: "cors"
+    method: 'GET',
+    headers: HEADER,
+    mode: 'cors'
   };
 
   const requestCategory = async ({ target }) => {
-    const targetCategory = target.closest("button").value;
+    const targetCategory = target.closest('button').value;
     setCategory(targetCategory);
-    const queryString = targetCategory === "all" ? "" : `?category=${targetCategory}`;
+    const queryString =
+      targetCategory === 'all' ? '' : `?category=${targetCategory}`;
     try {
-      console.log(options);
-      const res = await fetch(`${CONFIGS.url}${queryString}`, options);
+      const res = await fetch(`${URL}${queryString}`, options);
       const data = await res.json();
       setState(data);
     } catch (err) {
@@ -41,10 +39,12 @@ const Main = () => {
   };
 
   const requestPage = async targetPage => {
-    const categoryQuery = category === "all" ? "" : `category=${category}&`;
+    const categoryQuery = category === 'all' ? '' : `category=${category}&`;
     try {
-      console.log(options);
-      const res = await fetch(`${CONFIGS.url}/?${categoryQuery}page=${targetPage}`, options);
+      const res = await fetch(
+        `${URL}/?${categoryQuery}page=${targetPage}`,
+        options
+      );
       const data = await res.json();
       setState(data);
     } catch (err) {
