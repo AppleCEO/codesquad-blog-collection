@@ -8,8 +8,7 @@ http://link.codesquad.co.kr
 
 ### 웹페이지 실행화면
 
-![](/image01.jpg)
-![](/image02.jpg)
+![](/playWebpage.gif)
 
 
 ### 발표자료
