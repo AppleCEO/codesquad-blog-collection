@@ -7,15 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331DD551232F2D020095B474 /* codesquad_blog_collectionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331DD550232F2D020095B474 /* codesquad_blog_collectionUITests.swift */; };
 		3330AC122304D476003F37AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330AC112304D476003F37AE /* AppDelegate.swift */; };
 		3330AC142304D476003F37AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330AC132304D476003F37AE /* ViewController.swift */; };
 		3330AC172304D476003F37AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3330AC152304D476003F37AE /* Main.storyboard */; };
 		3330AC192304D47F003F37AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3330AC182304D47F003F37AE /* Assets.xcassets */; };
 		3330AC1C2304D47F003F37AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3330AC1A2304D47F003F37AE /* LaunchScreen.storyboard */; };
 		3330AC252304D68A003F37AE /* BlogPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330AC242304D68A003F37AE /* BlogPosts.swift */; };
+		3374DCB62324AD3E0013C6C6 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3374DCB52324AD3E0013C6C6 /* PopupViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		331DD553232F2D020095B474 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3330AC062304D476003F37AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3330AC0D2304D476003F37AE;
+			remoteInfo = "codesquad-blog-collection";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		331DD54E232F2D020095B474 /* codesquad-blog-collectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "codesquad-blog-collectionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		331DD550232F2D020095B474 /* codesquad_blog_collectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codesquad_blog_collectionUITests.swift; sourceTree = "<group>"; };
+		331DD552232F2D020095B474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3330AC0E2304D476003F37AE /* codesquad-blog-collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "codesquad-blog-collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3330AC112304D476003F37AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3330AC132304D476003F37AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,9 +39,17 @@
 		3330AC1B2304D47F003F37AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3330AC1D2304D47F003F37AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3330AC242304D68A003F37AE /* BlogPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPosts.swift; sourceTree = "<group>"; };
+		3374DCB52324AD3E0013C6C6 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		331DD54B232F2D020095B474 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3330AC0B2304D476003F37AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -37,10 +60,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331DD54F232F2D020095B474 /* codesquad-blog-collectionUITests */ = {
+			isa = PBXGroup;
+			children = (
+				331DD550232F2D020095B474 /* codesquad_blog_collectionUITests.swift */,
+				331DD552232F2D020095B474 /* Info.plist */,
+			);
+			path = "codesquad-blog-collectionUITests";
+			sourceTree = "<group>";
+		};
 		3330AC052304D476003F37AE = {
 			isa = PBXGroup;
 			children = (
 				3330AC102304D476003F37AE /* codesquad-blog-collection */,
+				331DD54F232F2D020095B474 /* codesquad-blog-collectionUITests */,
 				3330AC0F2304D476003F37AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				3330AC0E2304D476003F37AE /* codesquad-blog-collection.app */,
+				331DD54E232F2D020095B474 /* codesquad-blog-collectionUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +94,7 @@
 				3330AC112304D476003F37AE /* AppDelegate.swift */,
 				3330AC132304D476003F37AE /* ViewController.swift */,
 				3330AC152304D476003F37AE /* Main.storyboard */,
+				3374DCB52324AD3E0013C6C6 /* PopupViewController.swift */,
 				3330AC182304D47F003F37AE /* Assets.xcassets */,
 				3330AC1A2304D47F003F37AE /* LaunchScreen.storyboard */,
 				3330AC1D2304D47F003F37AE /* Info.plist */,
@@ -78,6 +113,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		331DD54D232F2D020095B474 /* codesquad-blog-collectionUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 331DD557232F2D020095B474 /* Build configuration list for PBXNativeTarget "codesquad-blog-collectionUITests" */;
+			buildPhases = (
+				331DD54A232F2D020095B474 /* Sources */,
+				331DD54B232F2D020095B474 /* Frameworks */,
+				331DD54C232F2D020095B474 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				331DD554232F2D020095B474 /* PBXTargetDependency */,
+			);
+			name = "codesquad-blog-collectionUITests";
+			productName = "codesquad-blog-collectionUITests";
+			productReference = 331DD54E232F2D020095B474 /* codesquad-blog-collectionUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		3330AC0D2304D476003F37AE /* codesquad-blog-collection */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3330AC202304D47F003F37AE /* Build configuration list for PBXNativeTarget "codesquad-blog-collection" */;
@@ -101,10 +154,14 @@
 		3330AC062304D476003F37AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "길준호";
 				TargetAttributes = {
+					331DD54D232F2D020095B474 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 3330AC0D2304D476003F37AE;
+					};
 					3330AC0D2304D476003F37AE = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -124,11 +181,19 @@
 			projectRoot = "";
 			targets = (
 				3330AC0D2304D476003F37AE /* codesquad-blog-collection */,
+				331DD54D232F2D020095B474 /* codesquad-blog-collectionUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		331DD54C232F2D020095B474 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3330AC0C2304D476003F37AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,6 +207,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		331DD54A232F2D020095B474 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				331DD551232F2D020095B474 /* codesquad_blog_collectionUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3330AC0A2304D476003F37AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,10 +222,19 @@
 				3330AC142304D476003F37AE /* ViewController.swift in Sources */,
 				3330AC252304D68A003F37AE /* BlogPosts.swift in Sources */,
 				3330AC122304D476003F37AE /* AppDelegate.swift in Sources */,
+				3374DCB62324AD3E0013C6C6 /* PopupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		331DD554232F2D020095B474 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3330AC0D2304D476003F37AE /* codesquad-blog-collection */;
+			targetProxy = 331DD553232F2D020095B474 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3330AC152304D476003F37AE /* Main.storyboard */ = {
@@ -174,6 +256,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		331DD555232F2D020095B474 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2N6GUCNLQH;
+				INFOPLIST_FILE = "codesquad-blog-collectionUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.kiljh.codesquad-blog-collectionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "codesquad-blog-collection";
+			};
+			name = Debug;
+		};
+		331DD556232F2D020095B474 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2N6GUCNLQH;
+				INFOPLIST_FILE = "codesquad-blog-collectionUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "me.kiljh.codesquad-blog-collectionUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "codesquad-blog-collection";
+			};
+			name = Release;
+		};
 		3330AC1E2304D47F003F37AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -329,6 +451,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		331DD557232F2D020095B474 /* Build configuration list for PBXNativeTarget "codesquad-blog-collectionUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				331DD555232F2D020095B474 /* Debug */,
+				331DD556232F2D020095B474 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3330AC092304D476003F37AE /* Build configuration list for PBXProject "codesquad-blog-collection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

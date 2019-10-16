@@ -37,6 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         createFloatingButton()
+        floatingButton?.accessibilityIdentifier = "FloatButton"
     }
     
     public override func viewWillDisappear(_ animated: Bool) {
@@ -62,7 +63,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // TODO: Add some logic for when the button is tapped.
     @IBAction private func doThisWhenButtonIsTapped(_ sender: Any) {
-        print("Button Tapped")
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let popupVC = storyBoard.instantiateViewController(withIdentifier: "PopupViewController") as! UIViewController
+        popupVC.modalPresentationStyle = .overCurrentContext
+        present(popupVC, animated: false, completion: nil)
     }
     
     private func constrainFloatingButtonToWindow() {
