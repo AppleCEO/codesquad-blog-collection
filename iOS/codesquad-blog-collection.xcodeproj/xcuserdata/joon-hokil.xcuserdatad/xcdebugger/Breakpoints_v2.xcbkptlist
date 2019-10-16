@@ -1,54 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
+   uuid = "8D95A1FC-C8FD-4EF5-9779-945137F33187"
    type = "1"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "32E5EBB1-9FB2-4C3D-A9D0-0EF0865A7889"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "codesquad-blog-collection/ViewController.swift"
-            timestampString = "589554203.573747"
+            timestampString = "589609323.147328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "numberOfSections(in:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "FC2E7A0D-76E4-4B60-8593-E7F6FE415BE0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "codesquad-blog-collection/ViewController.swift"
-            timestampString = "589554203.587332"
+            timestampString = "589609323.147409"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            uuid = "62001741-E707-460B-8CE2-88B0A1A5F52D"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "codesquad-blog-collection/ViewController.swift"
-            timestampString = "589554203.5877039"
+            timestampString = "589609323.147452"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
