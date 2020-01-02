@@ -15,6 +15,9 @@
 		3330AC1C2304D47F003F37AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3330AC1A2304D47F003F37AE /* LaunchScreen.storyboard */; };
 		3330AC252304D68A003F37AE /* BlogPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330AC242304D68A003F37AE /* BlogPosts.swift */; };
 		3374DCB62324AD3E0013C6C6 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3374DCB52324AD3E0013C6C6 /* PopupViewController.swift */; };
+		33C51ADE23BCCD0100A2CB9F /* wippy_common_back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C51ADD23BCCD0100A2CB9F /* wippy_common_back_btn.png */; };
+		33C51AE023BCCD8500A2CB9F /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C51ADF23BCCD8500A2CB9F /* PickerViewController.swift */; };
+		33C51AE223BCDCA600A2CB9F /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C51AE123BCDCA600A2CB9F /* PostModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +34,7 @@
 		331DD54E232F2D020095B474 /* codesquad-blog-collectionUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "codesquad-blog-collectionUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		331DD550232F2D020095B474 /* codesquad_blog_collectionUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = codesquad_blog_collectionUITests.swift; sourceTree = "<group>"; };
 		331DD552232F2D020095B474 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3330AC0E2304D476003F37AE /* codesquad-blog-collection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "codesquad-blog-collection.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3330AC0E2304D476003F37AE /* linksquad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = linksquad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3330AC112304D476003F37AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3330AC132304D476003F37AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3330AC162304D476003F37AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +43,9 @@
 		3330AC1D2304D47F003F37AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3330AC242304D68A003F37AE /* BlogPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPosts.swift; sourceTree = "<group>"; };
 		3374DCB52324AD3E0013C6C6 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		33C51ADD23BCCD0100A2CB9F /* wippy_common_back_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wippy_common_back_btn.png; sourceTree = "<group>"; };
+		33C51ADF23BCCD8500A2CB9F /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		33C51AE123BCDCA600A2CB9F /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +87,7 @@
 		3330AC0F2304D476003F37AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3330AC0E2304D476003F37AE /* codesquad-blog-collection.app */,
+				3330AC0E2304D476003F37AE /* linksquad.app */,
 				331DD54E232F2D020095B474 /* codesquad-blog-collectionUITests.xctest */,
 			);
 			name = Products;
@@ -98,6 +104,8 @@
 				3330AC182304D47F003F37AE /* Assets.xcassets */,
 				3330AC1A2304D47F003F37AE /* LaunchScreen.storyboard */,
 				3330AC1D2304D47F003F37AE /* Info.plist */,
+				33C51ADD23BCCD0100A2CB9F /* wippy_common_back_btn.png */,
+				33C51ADF23BCCD8500A2CB9F /* PickerViewController.swift */,
 			);
 			path = "codesquad-blog-collection";
 			sourceTree = "<group>";
@@ -106,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				3330AC242304D68A003F37AE /* BlogPosts.swift */,
+				33C51AE123BCDCA600A2CB9F /* PostModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -145,7 +154,7 @@
 			);
 			name = "codesquad-blog-collection";
 			productName = "codesquad-blog-collection";
-			productReference = 3330AC0E2304D476003F37AE /* codesquad-blog-collection.app */;
+			productReference = 3330AC0E2304D476003F37AE /* linksquad.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -198,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C51ADE23BCCD0100A2CB9F /* wippy_common_back_btn.png in Resources */,
 				3330AC1C2304D47F003F37AE /* LaunchScreen.storyboard in Resources */,
 				3330AC192304D47F003F37AE /* Assets.xcassets in Resources */,
 				3330AC172304D476003F37AE /* Main.storyboard in Resources */,
@@ -219,6 +229,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33C51AE023BCCD8500A2CB9F /* PickerViewController.swift in Sources */,
+				33C51AE223BCDCA600A2CB9F /* PostModel.swift in Sources */,
 				3330AC142304D476003F37AE /* ViewController.swift in Sources */,
 				3330AC252304D68A003F37AE /* BlogPosts.swift in Sources */,
 				3330AC122304D476003F37AE /* AppDelegate.swift in Sources */,
@@ -423,8 +435,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.kiljh.codesquad-blog-collection";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = me.kiljh.linksquad;
+				PRODUCT_NAME = linksquad;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -441,8 +453,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "me.kiljh.codesquad-blog-collection";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = me.kiljh.linksquad;
+				PRODUCT_NAME = linksquad;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
