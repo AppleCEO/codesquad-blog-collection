@@ -57,6 +57,7 @@ class PopupViewController: UIViewController, UIGestureRecognizerDelegate {
             return false
         }
         else {
+//            self.dismiss(animated: false, completion: nil)
             return true
         }
     }

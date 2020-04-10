@@ -14,6 +14,8 @@
 		3330AC192304D47F003F37AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3330AC182304D47F003F37AE /* Assets.xcassets */; };
 		3330AC1C2304D47F003F37AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3330AC1A2304D47F003F37AE /* LaunchScreen.storyboard */; };
 		3330AC252304D68A003F37AE /* BlogPosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3330AC242304D68A003F37AE /* BlogPosts.swift */; };
+		3369A89223BF1514008E37FE /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3369A89123BF1514008E37FE /* ContainerViewController.swift */; };
+		3369A89423BF1A14008E37FE /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3369A89323BF1A14008E37FE /* ContainerView.swift */; };
 		3374DCB62324AD3E0013C6C6 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3374DCB52324AD3E0013C6C6 /* PopupViewController.swift */; };
 		33C51ADE23BCCD0100A2CB9F /* wippy_common_back_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 33C51ADD23BCCD0100A2CB9F /* wippy_common_back_btn.png */; };
 		33C51AE023BCCD8500A2CB9F /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C51ADF23BCCD8500A2CB9F /* PickerViewController.swift */; };
@@ -42,6 +44,8 @@
 		3330AC1B2304D47F003F37AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3330AC1D2304D47F003F37AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3330AC242304D68A003F37AE /* BlogPosts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlogPosts.swift; sourceTree = "<group>"; };
+		3369A89123BF1514008E37FE /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		3369A89323BF1A14008E37FE /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		3374DCB52324AD3E0013C6C6 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 		33C51ADD23BCCD0100A2CB9F /* wippy_common_back_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wippy_common_back_btn.png; sourceTree = "<group>"; };
 		33C51ADF23BCCD8500A2CB9F /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
@@ -96,16 +100,15 @@
 		3330AC102304D476003F37AE /* codesquad-blog-collection */ = {
 			isa = PBXGroup;
 			children = (
+				3369A89523BF1B4B008E37FE /* ViewController */,
 				3330AC232304D674003F37AE /* Model */,
+				3369A89323BF1A14008E37FE /* ContainerView.swift */,
 				3330AC112304D476003F37AE /* AppDelegate.swift */,
-				3330AC132304D476003F37AE /* ViewController.swift */,
 				3330AC152304D476003F37AE /* Main.storyboard */,
-				3374DCB52324AD3E0013C6C6 /* PopupViewController.swift */,
 				3330AC182304D47F003F37AE /* Assets.xcassets */,
 				3330AC1A2304D47F003F37AE /* LaunchScreen.storyboard */,
 				3330AC1D2304D47F003F37AE /* Info.plist */,
 				33C51ADD23BCCD0100A2CB9F /* wippy_common_back_btn.png */,
-				33C51ADF23BCCD8500A2CB9F /* PickerViewController.swift */,
 			);
 			path = "codesquad-blog-collection";
 			sourceTree = "<group>";
@@ -117,6 +120,17 @@
 				33C51AE123BCDCA600A2CB9F /* PostModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3369A89523BF1B4B008E37FE /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3330AC132304D476003F37AE /* ViewController.swift */,
+				3374DCB52324AD3E0013C6C6 /* PopupViewController.swift */,
+				33C51ADF23BCCD8500A2CB9F /* PickerViewController.swift */,
+				3369A89123BF1514008E37FE /* ContainerViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +245,9 @@
 			files = (
 				33C51AE023BCCD8500A2CB9F /* PickerViewController.swift in Sources */,
 				33C51AE223BCDCA600A2CB9F /* PostModel.swift in Sources */,
+				3369A89223BF1514008E37FE /* ContainerViewController.swift in Sources */,
 				3330AC142304D476003F37AE /* ViewController.swift in Sources */,
+				3369A89423BF1A14008E37FE /* ContainerView.swift in Sources */,
 				3330AC252304D68A003F37AE /* BlogPosts.swift in Sources */,
 				3330AC122304D476003F37AE /* AppDelegate.swift in Sources */,
 				3374DCB62324AD3E0013C6C6 /* PopupViewController.swift in Sources */,
@@ -435,6 +451,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.kiljh.linksquad;
 				PRODUCT_NAME = linksquad;
 				SWIFT_VERSION = 5.0;
@@ -453,6 +470,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.kiljh.linksquad;
 				PRODUCT_NAME = linksquad;
 				SWIFT_VERSION = 5.0;

@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate {
     var posts: BlogPosts?
     var serverURL = "http://13.125.91.246/v1?category=all"
+    var index = 0
     
     // floating 버튼 관련 프로퍼티 시작
     private var floatingButton: UIButton?
@@ -32,6 +33,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var blogPostsTableView: UITableView!
     @IBOutlet weak var tabBar: UITabBar!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! ContainerViewController
+        destination.url = posts?.links.docs[index].url
+    }
     
     // floating 버튼 관련 메소드 시작
     public override func viewWillAppear(_ animated: Bool) {
@@ -125,14 +131,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let url = URL(string: serverURL+"&page=\(indexPath.section+1)")!
-        loadPosts(url: url)
-        
-        let currentRowOfList = posts?.links.docs[indexPath.row]
-        
-        if let url = URL(string: currentRowOfList?.url ?? "www.apple.com") {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+        index = indexPath.row
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
